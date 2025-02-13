@@ -1,4 +1,4 @@
-const apiEndpoint = "http://20.166.253.13:8080/api/tasks";
+const apiEndpoint = "https://container-app-210-prelaz-terry--0fithkc.thankfulriver-9aca69b2.northeurope.azurecontainerapps.io/api/tasks";
 
 $(document).ready(function () {
   // Charger les tâches au démarrage
