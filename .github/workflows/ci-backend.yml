@@ -2,6 +2,9 @@ name: Build and save my Docker image to a regitry
 
 on:
   push:
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
     branches:
       - main  # Déclenchement lorsque le code est poussé sur main
 
