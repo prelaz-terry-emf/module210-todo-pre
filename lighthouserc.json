@@ -1,10 +1,8 @@
 {
   "ci": {
-    "assert": {
-      "assertions": {
-        "performance": ["error", {"minScore": 0.8}],
-        "accessibility": ["error", {"minScore": 0.9}]
-      }
+    "assertions": {
+      "performance": ["error", { "minScore": 0.9 }],
+      "accessibility": ["error", { "minScore": 0.9 }]
     }
   }
 }
