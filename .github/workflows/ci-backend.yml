@@ -6,7 +6,7 @@ on:
       - main  # Déclenchement lorsque le code est poussé sur main
 
 env:
-  REG_NAME: "nomduregistre" # Nom du registy
+  REG_NAME: "exo.container-registry.com" # Nom du registy
   IMAGE_NAME: "backend-app" # Nom de votre image
 
 jobs:
@@ -17,11 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build de l’image Docker
-        run: docker build -t my-image:latest .
+      - name: Build Docker Image
+        run: docker build -t ${{ env.IMAGE_NAME }}:latest ./backend
 
-      - name: Taguer l’image
-        run: docker tag my-image:latest ${{ secrets.EXO_REGISTRY_URL }}/c213-emf/my-repo:latest
+      - name: Tag Docker Image
+        run: docker tag ${{ env.IMAGE_NAME }}:latest ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }}:latest
 
-      - name: Push de l’image sur la registry
-        run: docker push ${{ secrets.EXO_REGISTRY_URL }}/c213-emf/my-repo:latest
+      - name: Push Docker Image
+        run: docker push ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }}:latest
