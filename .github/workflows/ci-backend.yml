@@ -10,7 +10,7 @@ on:
 
 env:
   REG_NAME: "exo.container-registry.com" # Nom du registy
-  IMAGE_NAME: "backend-app" # Nom de votre image
+  IMAGE_NAME: "todo-app-tp" # Nom de votre image
 
 jobs:
   build-and-deploy:
