@@ -3,7 +3,7 @@ name: Build and save my Docker image to a regitry
 on:
   push:
     paths:
-      - './todo-app/src/backend/'
+      - './todo-app/src/backend'
     branches:
       - main  # Déclenchement lorsque le code est poussé sur main
 
@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Login to Exoscale Registry
         run: echo "${{ secrets.EXO_REGISTRY_PASSWORD }}" | docker login ${{ env.REG_NAME }} -u ${{ secrets.EXO_REGISTRY_USERNAME }} --password-stdin
